@@ -1,23 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import Workouts from './components/Workouts';
+import Header from './components/Header'
+import {useEffect, useState} from 'react'
+import NewWorkoutForm from './components/NewWorkoutForm';
+import ExerciseForm from './components/ExerciseForm';
+
 
 function App() {
+
+  const [workouts, setWorkouts] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:9393/workouts/")
+    .then(resp => resp.json())
+    .then(data => {
+        setWorkouts(data.workouts)
+    })
+  }, [])
+
+  function addNewWorkout(newWorkout) {
+    const addW = [...workouts, newWorkout]
+    setWorkouts(addW)
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <br></br>
+      <Workouts workouts={workouts}/>
+      <NewWorkoutForm addNewWorkout={addNewWorkout}/>
+      <br/>
+      <ExerciseForm />
     </div>
   );
 }
