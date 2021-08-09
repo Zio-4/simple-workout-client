@@ -77,7 +77,7 @@ function NewWorkoutForm({addNewWorkout}) {
                         />*/}
                         </textarea>
                     </div>
-            <button class="ui submit button">Create Workout</button>
+            <button class="ui inverted submit button">Create Workout</button>
             </div>
         </form>
     )

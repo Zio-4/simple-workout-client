@@ -6,6 +6,7 @@ import NewWorkoutForm from './components/NewWorkoutForm'
 import ExerciseForm from './components/ExerciseForm'
 import {Switch, Route} from 'react-router-dom'
 import NavBar from './components/NavBar'
+import WorkoutDetailed from './components/WorkoutDetailed';
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
       <Switch>
         <Route path="/new_workout">
           <NewWorkoutForm addNewWorkout={addNewWorkout}/>
+        </Route>
+        <Route path="/workouts/:id">
+          <WorkoutDetailed />
         </Route>
         <Route path="/add_exercises">
           <ExerciseForm />
