@@ -7,7 +7,7 @@ function Workouts({workouts}) {
 
     return (
         <div>
-            <h2>All Workouts</h2>
+            <h2 id="workouts-header">All Workouts</h2>
             {workouts.map(workout => <Workout key={workout.id} workout={workout}/>)}
         </div>
     )

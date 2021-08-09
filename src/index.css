@@ -15,3 +15,11 @@ code {
 #root {
   background-color: black;
 }
+
+#workouts-header {
+  margin-top: 40px;
+}
+
+#workout-form {
+  margin-top: 40px;
+}

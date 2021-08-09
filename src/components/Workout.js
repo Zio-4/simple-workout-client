@@ -1,4 +1,3 @@
-import Exercise from "./Exercise"
 import {Link} from 'react-router-dom'
 
 function Workout({workout}) {

@@ -1,9 +1,11 @@
 import './App.css';
-import Workouts from './components/Workouts';
+import Workouts from './components/Workouts'
 import Header from './components/Header'
 import {useEffect, useState} from 'react'
-import NewWorkoutForm from './components/NewWorkoutForm';
-import ExerciseForm from './components/ExerciseForm';
+import NewWorkoutForm from './components/NewWorkoutForm'
+import ExerciseForm from './components/ExerciseForm'
+import {Switch, Route} from 'react-router-dom'
+import NavBar from './components/NavBar'
 
 
 function App() {
@@ -28,10 +30,21 @@ function App() {
     <div className="App">
       <Header />
       <br></br>
-      <Workouts workouts={workouts}/>
-      <NewWorkoutForm addNewWorkout={addNewWorkout}/>
-      <br/>
-      <ExerciseForm />
+      <NavBar />
+      <Switch>
+        <Route path="/new_workout">
+          <NewWorkoutForm addNewWorkout={addNewWorkout}/>
+        </Route>
+        <Route path="/add_exercises">
+          <ExerciseForm />
+        </Route>
+        <Route path="/">
+          <Workouts workouts={workouts}/>
+        </Route>
+        <Route path="*">
+          <h1>404 not found</h1>
+        </Route> 
+      </Switch>
     </div>
   );
 }
