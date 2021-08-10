@@ -16,7 +16,7 @@ function Workout({workout}) {
         
         <div class="item">
             <div class="content">
-                <div class="ui right floated primary button">Edit</div>
+               <Link to={`workouts/${workout.id}/edit`}> <div class="ui right floated primary button">Edit</div> </Link>
             </div>
         </div>
       </div>
