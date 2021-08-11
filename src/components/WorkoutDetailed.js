@@ -10,7 +10,6 @@ function WorkoutDetailed() {
         fetch(`http://localhost:9393/workouts/${params.id}`)
         .then(r => r.json())
         .then(data => {
-            console.log("Data in WorkoutDetailed: ", data)
             setWorkout(data.workout)
             setExercises(data.exercises)
         })
@@ -34,7 +33,7 @@ function WorkoutDetailed() {
     return (
         <div>
             <h2 id="detailed-name">{name}</h2>
-            <p>{day}</p>
+            <p>Day: {day}</p>
             <p>Notes: {notes}</p>
             <div class="ui inverted segment">
             <h4 class="ui horizontal inverted divider">

@@ -1,6 +1,5 @@
 
 import Workout from './Workout'
-import Exercise from './Exercise'
 
 function Workouts({workouts}) {
 

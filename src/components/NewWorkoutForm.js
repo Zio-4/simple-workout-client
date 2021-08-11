@@ -1,12 +1,14 @@
 import {useState} from 'react'
+import {useHistory} from 'react-router-dom'
 
 function NewWorkoutForm({addNewWorkout}) {
     const [workoutFormData, setWorkoutFormData] = useState({
         name: "",
         day: "",
         notes: ""
- 
     })
+
+    const history = useHistory()
 
 // Used as a base to clone objects
     const blankExercise = {
@@ -68,7 +70,7 @@ function NewWorkoutForm({addNewWorkout}) {
                 day: "",
                 notes: ""
             })
-
+            history.push('/home')
         })
     }
 
@@ -188,51 +190,7 @@ function NewWorkoutForm({addNewWorkout}) {
                 <h4 class="ui horizontal inverted divider">
                     Add Exercises
                 </h4>
-                {/* <div class="field"></div>
-                    <label>Name of Exercise:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        value={exerciseFormData.name}
-                        placeholder="Deadlift, Benchpress, etc"
-
-                        />
-                <div class="field"></div>
-                    <label>Reps:</label>
-                        <input
-                            type="number"
-                            id="reps"
-                            value={exerciseFormData.reps}
-                            placeholder="5, 10, etc"
-
-                        />
-                <div class="field"></div>
-                    <label>Sets:</label>
-                        <input
-                            type="number"
-                            id="sets"
-                            value={exerciseFormData.sets}
-                            placeholder="1, 2, 3, etc"
-
-                        />
-                <div class="field"></div>
-                    <label>Notes:</label>
-                        <input
-                            type="text"
-                            id="notes"
-                            value={exerciseFormData.notes}
-                            placeholder="'Watch for curve in back'"
-
-                        />
-                <div class="field"></div>
-                    <label>Weight:</label>
-                        <input
-                            type="number"
-                            id="weight"
-                            value={exerciseFormData.weight}
-                            placeholder="175, 250, etc"
-
-                    /> */}
+                
                     {mappedExerciseState}
                 <br></br>
             {/*Type button inputs (not button elements) do not submit the form */}

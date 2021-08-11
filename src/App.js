@@ -3,10 +3,11 @@ import Workouts from './components/Workouts'
 import Header from './components/Header'
 import {useEffect, useState} from 'react'
 import NewWorkoutForm from './components/NewWorkoutForm'
-import ExerciseForm from './components/ExerciseForm'
 import {Switch, Route} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import WorkoutDetailed from './components/WorkoutDetailed';
+import {Redirect} from 'react-router-dom'
+import EditWorkout from './components/EditWorkout';
 
 
 function App() {
@@ -36,17 +37,18 @@ function App() {
         <Route path="/new_workout">
           <NewWorkoutForm addNewWorkout={addNewWorkout}/>
         </Route>
+        <Route path="/workouts/:id/edit">
+          <EditWorkout />
+        </Route>
         <Route path="/workouts/:id">
           <WorkoutDetailed />
         </Route>
-        <Route path="/add_exercises">
-          <ExerciseForm />
-        </Route>
-        <Route path="/">
+        <Route path="/home">
           <Workouts workouts={workouts}/>
         </Route>
         <Route path="*">
           <h1>404 not found</h1>
+          <Redirect from="*" to="/home" />
         </Route> 
       </Switch>
     </div>
