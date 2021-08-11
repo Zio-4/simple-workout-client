@@ -28,6 +28,11 @@ function EditWorkout({onDeleteWorkout}) {
         history.push('/home')
     }
 
+    function onDeleteExercise(id) {
+        const updatedExercises = exercises.filter(ex => ex.id !== id)
+        setExercises(updatedExercises)
+    }
+
     const mappedExercises = exercises.map(e => {
         return <div key={e.id}>
         <p>{e.name}</p>
@@ -35,7 +40,12 @@ function EditWorkout({onDeleteWorkout}) {
         <p>Reps: {e.reps}</p>
         <p>Weight: {e.weight}</p>
         <p>Notes: {e.notes}</p>
-        <button class="ui yellow inverted submit button">Delete Exercise</button>
+        <button onClick={() => {
+            fetch(`http://localhost:9393/exercises/${e.id}`, {
+                method: "DELETE"
+            })
+            onDeleteExercise(e.id)
+        }} class="ui yellow inverted submit button">Delete Exercise</button>
         <div class="ui inverted divider"></div>
         </div>
     })
