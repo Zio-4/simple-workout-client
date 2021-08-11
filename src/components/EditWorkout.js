@@ -1,10 +1,11 @@
 import {useState, useEffect} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 
-function EditWorkout() {
+function EditWorkout({onDeleteWorkout}) {
     const [workout, setWorkout] = useState(null)
     const [exercises, setExercises] = useState([])
     const params = useParams()
+    const history = useHistory()
 
     useEffect(() => {
         fetch(`http://localhost:9393/workouts/${params.id}`)
@@ -19,8 +20,12 @@ function EditWorkout() {
 
     const {name, day, notes} = workout
 
-    function onClick() {
-        
+    function onDeleteWorkoutClick() {
+        fetch(`http://localhost:9393/workouts/${params.id}`, {
+            method: "DELETE"
+        })
+        onDeleteWorkout(params.id)
+        history.push('/home')
     }
 
     const mappedExercises = exercises.map(e => {
@@ -48,7 +53,7 @@ function EditWorkout() {
             </h4>
                 {mappedExercises}
             </div>
-            <button class="ui red inverted submit button">Delete Workout</button>
+            <button onClick={onDeleteWorkoutClick} class="ui red inverted submit button">Delete Workout</button>
         </div>
     )
 }

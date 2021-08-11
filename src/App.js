@@ -27,6 +27,11 @@ function App() {
     setWorkouts(addW)
   }
 
+  function onDeleteWorkout(paramsID) {
+    const updatedWorkouts = workouts.filter(w => w.id !== parseInt(paramsID))
+    setWorkouts(updatedWorkouts)
+  }
+
 
   return (
     <div className="App">
@@ -38,7 +43,7 @@ function App() {
           <NewWorkoutForm addNewWorkout={addNewWorkout}/>
         </Route>
         <Route path="/workouts/:id/edit">
-          <EditWorkout />
+          <EditWorkout onDeleteWorkout={onDeleteWorkout}/>
         </Route>
         <Route path="/workouts/:id">
           <WorkoutDetailed />
