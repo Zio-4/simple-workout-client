@@ -182,13 +182,12 @@ function NewWorkoutForm({addNewWorkout}) {
                     <h4 class="ui horizontal inverted divider">
                         Add Exercises
                     </h4>
-                    
-                        {mappedExerciseState}
+                    {/*Type button inputs (not button elements) do not submit the form */}
+                    <input class="ui blue inverted button" type="button" value="Add New Exercise" onClick={addExercise} />
+                    {mappedExerciseState}
                     <br></br>
-            {/*Type button inputs (not button elements) do not submit the form */}
-            <input type="button" value="Add New Exercise" onClick={addExercise} />
+            
             </div>
-                <br></br>
             <button class="ui inverted submit button">Create Workout</button>
             </div>
         </form>

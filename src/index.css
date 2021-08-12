@@ -41,3 +41,7 @@ code {
   margin-top: 15px;
 }
 
+.ui.blue.inverted.button {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
