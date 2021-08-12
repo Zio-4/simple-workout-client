@@ -45,14 +45,6 @@ function NewWorkoutForm({addNewWorkout}) {
         setExerciseFormData([...exerciseFormData, {...blankExercise}])
     }
 
-
-
-    
-       /* function handleExerciseChange(e) {
-            setExerciseFormData({
-                ...exerciseFormData, [e.target.id]: e.target.value
-            })
-        } */
         
 
     function handleSubmit(e) {
@@ -147,52 +139,52 @@ function NewWorkoutForm({addNewWorkout}) {
     return (
         <form id="workout-form" onSubmit={handleSubmit}>
             <div class="ui inverted segment">
-            <div class="ui inverted form">
-                <div class="two fields">
-                    <div class="field"></div>
-                        <label>Name of Workout:</label>
-                        <input
+                <div class="ui inverted form">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Name of Workout:</label>
+                            <input placeholder="Upper Body, Leg day, etc" 
                             type="text"
-                            id="name"
+                            id="name" 
                             value={workoutFormData.name}
-                            placeholder="Upper Body, Leg day, etc"
                             onChange={handleChange}
-                        />
-                    <div class="field"></div>
-                        <label>Day:</label>
-                        <input
+                            />
+                        </div>
+                        <div class="field">
+                            <label>Day:</label>
+                            <input placeholder="Monday, Tuesday, etc" 
                             type="text"
                             id="day"
                             value={workoutFormData.day}
                             placeholder="Monday, Tuesday, etc"
                             onChange={handleChange}
-                        />
-
-                </div>
-                <div class="field"></div>
-                        <label>Notes:</label>
-                        <textarea
-                            id="notes"
-                            value={workoutFormData.notes}
-                            placeholder="'Deload after 12 weeks'"
-                            onChange={handleChange}
-                            rows="5">
-                        {/*<input
-                            
-                            type="text"
-                            id="notes"
-                            value={workoutFormData.notes}
-                            placeholder="'Deload after 12 weeks'"
-                            onChange={handleChange}
-                            
-                        />*/}
-                        </textarea>
-                <h4 class="ui horizontal inverted divider">
-                    Add Exercises
-                </h4>
-                
-                    {mappedExerciseState}
-                <br></br>
+                            />
+                        </div>
+                    </div>
+                    <div class="field"></div>
+                            <label>Notes:</label>
+                            <textarea
+                                id="notes"
+                                value={workoutFormData.notes}
+                                placeholder="'Deload after 12 weeks'"
+                                onChange={handleChange}
+                                rows="5">
+                            {/*<input
+                                
+                                type="text"
+                                id="notes"
+                                value={workoutFormData.notes}
+                                placeholder="'Deload after 12 weeks'"
+                                onChange={handleChange}
+                                
+                            />*/}
+                            </textarea>
+                    <h4 class="ui horizontal inverted divider">
+                        Add Exercises
+                    </h4>
+                    
+                        {mappedExerciseState}
+                    <br></br>
             {/*Type button inputs (not button elements) do not submit the form */}
             <input type="button" value="Add New Exercise" onClick={addExercise} />
             </div>

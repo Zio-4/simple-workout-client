@@ -17,6 +17,14 @@ code {
   background-color: black;
 }
 
+#simple-workout-header {
+  margin-top: 40px;
+}
+
+#workout-name-home {
+  font-size: 14pt;
+}
+
 #workouts-header {
   margin-top: 40px;
 }
@@ -27,5 +35,9 @@ code {
 
 #detailed-name {
   margin-top: 40px;
+}
+
+.ui.centered.grid {
+  margin-top: 15px;
 }
 

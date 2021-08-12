@@ -2,7 +2,7 @@
 function Header() {
     return (
         <div>
-            <h1>Simple Workout</h1>
+            <h1 id="simple-workout-header">Simple Workout</h1>
         </div>
     )
 }

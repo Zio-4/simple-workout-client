@@ -7,7 +7,7 @@ function Workout({workout}) {
             <Link to={`/workouts/${workout.id}`}>
                 <div class="item">
                     <div class="content">  
-                        <div class="header">{workout.name}</div>
+                        <div id="workout-name-home" class="header">{workout.name}</div>
                             {workout.day}
                     </div>
                 </div>
