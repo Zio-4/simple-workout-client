@@ -3,10 +3,9 @@ import Workouts from './components/Workouts'
 import Header from './components/Header'
 import {useEffect, useState} from 'react'
 import NewWorkoutForm from './components/NewWorkoutForm'
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import WorkoutDetailed from './components/WorkoutDetailed';
-import {Redirect} from 'react-router-dom'
 import EditWorkout from './components/EditWorkout';
 
 
