@@ -7,7 +7,7 @@ function WorkoutDetailed() {
     const params = useParams()
 
     useEffect(() => {
-        fetch(`http://localhost:9393/workouts/${params.id}`)
+        fetch(`http://localhost:9292/workouts/${params.id}`)
         .then(r => r.json())
         .then(data => {
             setWorkout(data.workout)

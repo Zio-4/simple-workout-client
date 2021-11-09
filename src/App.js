@@ -14,7 +14,7 @@ function App() {
   const [workouts, setWorkouts] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:9393/workouts/")
+    fetch("http://localhost:9292/workouts/")
     .then(resp => resp.json())
     .then(data => {
         setWorkouts(data.workouts)

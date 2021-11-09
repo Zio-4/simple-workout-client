@@ -49,7 +49,7 @@ function NewWorkoutForm({addNewWorkout}) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        fetch("http://localhost:9393/workouts/", {
+        fetch("http://localhost:9292/workouts/", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({name: workoutFormData.name, day: workoutFormData.day, notes: workoutFormData.notes, exercises_attributes: exerciseFormData})

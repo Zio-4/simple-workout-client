@@ -8,7 +8,7 @@ function EditWorkout({onDeleteWorkout}) {
     const history = useHistory()
 
     useEffect(() => {
-        fetch(`http://localhost:9393/workouts/${params.id}`)
+        fetch(`http://localhost:9292/workouts/${params.id}`)
         .then(r => r.json())
         .then(data => {
             setWorkout(data.workout)
@@ -21,7 +21,7 @@ function EditWorkout({onDeleteWorkout}) {
     const {name, day, notes} = workout
 
     function onDeleteWorkoutClick() {
-        fetch(`http://localhost:9393/workouts/${params.id}`, {
+        fetch(`http://localhost:9292/workouts/${params.id}`, {
             method: "DELETE"
         })
         onDeleteWorkout(params.id)
@@ -41,7 +41,7 @@ function EditWorkout({onDeleteWorkout}) {
         <p>Weight: {e.weight}</p>
         <p>Notes: {e.notes}</p>
         <button onClick={() => {
-            fetch(`http://localhost:9393/exercises/${e.id}`, {
+            fetch(`http://localhost:9292/exercises/${e.id}`, {
                 method: "DELETE"
             })
             onDeleteExercise(e.id)
